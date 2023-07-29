@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import ChatMessages from "./ChatMessages";
 import { useDispatch, useSelector } from "react-redux";
