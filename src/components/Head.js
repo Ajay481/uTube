@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
@@ -21,24 +20,23 @@ const Head = () => {
       if (searchCache[searchQuery]) {
         setSuggestions(searchCache[searchQuery]);
       } else {
+        const getSearchSuggestions = async () => {
+          const data = await fetch(YOUTUBE_SEARCH_API_SUGGESTION + searchQuery);
+          const json = await data.json();
+          setSuggestions(json[1]);
+          dispatch(
+            cacheResults({
+              [searchQuery]: json[1],
+            })
+          );
+        };
         getSearchSuggestions();
       }
     }, 200);
 
     return () => clearTimeout(timer);
-  }, [searchQuery]);
+  }, [searchQuery, searchCache, dispatch]);
 
-  const getSearchSuggestions = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API_SUGGESTION + searchQuery);
-    const json = await data.json();
-    setSuggestions(json[1]);
-
-    dispatch(
-      cacheResults({
-        [searchQuery]: json[1],
-      })
-    );
-  };
   const toggleHandler = () => {
     dispatch(toggleMenu());
   };
