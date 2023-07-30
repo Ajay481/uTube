@@ -20,7 +20,7 @@ const VideoContainer = () => {
   if (videos?.length === 0) return <Shimmer />;
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap z-0">
       {videos?.map((video) => (
         <Link
           to={`/watch/:${video?.snippet?.channelId}?v=` + video?.id}

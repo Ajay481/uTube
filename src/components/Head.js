@@ -32,7 +32,7 @@ const Head = () => {
         };
         getSearchSuggestions();
       }
-    }, 100);
+    }, 200);
 
     return () => clearTimeout(timer);
   }, [searchQuery, searchCache, dispatch]);
@@ -42,7 +42,7 @@ const Head = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-5 shadow-lg sticky top-0 bg-white w-full">
+    <div className="grid grid-flow-col p-5 z-10 shadow-lg sticky top-0 bg-white w-full">
       <div className="flex col-span-1 ">
         <img
           onClick={() => toggleHandler()}
@@ -69,7 +69,7 @@ const Head = () => {
           }}
         >
           <input
-            className="w-1/2 border border-gray-400 p-2 rounded-l-full"
+            className="w-1/2 border border-gray-400 p-3 rounded-l-full"
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}

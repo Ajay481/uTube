@@ -9,7 +9,7 @@ const SideBar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="w-[14rem] p-3 sticky left-0 top-[9.25rem] h-full bg-white">
+    <div className="w-1/2 p-3 sticky left-0 top-[9.25rem] h-full bg-white">
       <ul>
         <li className="hover:bg-gray-100 cursor-pointer py-2 rounded-lg">
           <Link to="/" className="flex">
