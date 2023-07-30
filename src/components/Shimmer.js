@@ -7,7 +7,7 @@ const Shimmer = () => {
         .fill("")
         .map((e, index) => (
           <div
-            className="bg-gray-300 w-72 h-36 shadow-lg m-4 rounded-lg"
+            className="bg-gray-300 w-72 h-36 shadow-lg m-1 rounded-lg"
             key={index}
           >
             <ul className="mt-40">
@@ -21,7 +21,7 @@ const Shimmer = () => {
         .fill("")
         .map((e, index) => (
           <div
-            className="bg-gray-300 w-72 h-36 shadow-lg m-4 mt-24 rounded-lg"
+            className="bg-gray-300 w-72 h-36 shadow-lg m-1 mt-24 rounded-lg"
             key={index}
           >
             <ul className="mt-40">
