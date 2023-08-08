@@ -1,6 +1,7 @@
 import React from "react";
 
 const VideoCard = ({ info }) => {
+  console.log(info);
   const { snippet } = info;
   const { channelTitle, title, thumbnails } = snippet;
 
@@ -13,7 +14,15 @@ const VideoCard = ({ info }) => {
       />
       <ul>
         <li className="font-bold py-2">{title}</li>
-        <li>{channelTitle}</li>
+        <li className="text-gray-500">{channelTitle}</li>
+        {info?.statistics?.viewCount ? (
+          <li className="text-gray-500">
+            {info?.statistics?.viewCount < 1000000
+              ? (info?.statistics?.viewCount / 1000).toFixed() + "K"
+              : (info?.statistics?.viewCount / 1000000).toFixed(2) + "M"}{" "}
+            views
+          </li>
+        ) : null}
       </ul>
     </div>
   );

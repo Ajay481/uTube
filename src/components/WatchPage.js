@@ -54,7 +54,7 @@ const WatchPage = () => {
       </div>
       <VideoDescription info={fullVideo} />
       <h1 className="text-2xl font-bold mt-8">Comments: </h1>
-      {comment.map((com) => (
+      {comment?.map((com) => (
         <CommentsContainer key={com?.id} detail={com} />
       ))}
     </div>
